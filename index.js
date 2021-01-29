@@ -52,23 +52,43 @@ const opponent = document.createElement('div')
 const game = document.querySelector("#game")
 
 let random = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
-let randomPosition = opponent.style = `top: ${random}px; left: ${random + 50}px;`
+opponent.style = `top: ${random}px; left: ${random + 50}px;`
 
 game.appendChild(opponent)
 
 opponent.style.display = "block"
-opponent.style = randomPosition
 opponent.style.height = "50px";
 opponent.style.width = "50px";
 opponent.style.position = "absolute"
 opponent.style.backgroundColor = "white"
 
-document.addEventListener("keydown", function() {
+document.addEventListener("keydown", () => {
 if(square.style.left === opponent.style.left && square.style.top === opponent.style.top) {
   game.removeChild(opponent)
-  
+  setInterval(addChild, 4000)
 } 
 })
 
+function addChild () {
+  
+//   let random2 = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
+// opponent.style = `top: ${random2}px; left: ${random2 + 50}px;`
+//https://media.giphy.com/media/uR6JMOFCtLmXkcKOkG/giphy.gif
+let img = document.createElement("img")
+img.src = "https://media.giphy.com/media/uR6JMOFCtLmXkcKOkG/giphy.gif"
+let random2 = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
+img.style = `top: ${random2}px; left: ${random2 + 50}px;`
+img.style.display = "block"
+img.style.height = "50px";
+img.style.width = "50px";
+img.style.position = "absolute"
 
+game.appendChild(img)
+document.addEventListener("keydown", () => {
+if(square.style.left === img.style.left && square.style.top === img.style.top) {
+  game.removeChild(img)
+  setInterval(addChild, 10000)
+} 
+})
+}
 
