@@ -42,7 +42,7 @@ rootBody.appendChild(sectionOne)
 sectionOne.append(sectionOneTitle)
 
 sectionOneTitle.innerText = "Feel The Bern!!"
-sectionOneTitle.addEventListener("click", function(e) {
+sectionOneTitle.addEventListener("mouseover", function(e) {
   if(e.target === sectionOneTitle) {
     sectionOneTitle.style.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
   }
