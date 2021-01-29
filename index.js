@@ -1,8 +1,9 @@
 let square = document.getElementById("square");
 console.log(square.style.left, square.style.top);
+const game = document.querySelector("#game")
+game.style.backgroundImage = "url(https://media.giphy.com/media/26u4o0RRnUxq3vuKI/giphy.gif)"
 
 document.addEventListener("keydown", function(e) {
-  // console.log(e.key)
   // left movement
   const moveLeft = square.offsetLeft
   const moveTop = square.offsetTop
@@ -42,6 +43,7 @@ rootBody.appendChild(sectionOne)
 sectionOne.append(sectionOneTitle)
 
 sectionOneTitle.innerText = "Feel The Bern!!"
+sectionOneTitle.style.textAlign = "center"
 sectionOneTitle.addEventListener("mouseover", function(e) {
   if(e.target === sectionOneTitle) {
     sectionOneTitle.style.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
@@ -49,7 +51,7 @@ sectionOneTitle.addEventListener("mouseover", function(e) {
 })
 
 const opponent = document.createElement('div')
-const game = document.querySelector("#game")
+
 
 let random = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
 opponent.style = `top: ${random}px; left: ${random + 50}px;`
