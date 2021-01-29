@@ -51,10 +51,11 @@ sectionOneTitle.addEventListener("click", function(e) {
 const opponent = document.createElement('div')
 const game = document.querySelector("#game")
 
-let random = Math.floor(Math.random() * 250)*10
+let random = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
 let randomPosition = opponent.style = `top: ${random}px; left: ${random + 50}px;`
 
 game.appendChild(opponent)
+
 opponent.style.display = "block"
 opponent.style = randomPosition
 opponent.style.height = "50px";
@@ -62,20 +63,12 @@ opponent.style.width = "50px";
 opponent.style.position = "absolute"
 opponent.style.backgroundColor = "white"
 
+document.addEventListener("keydown", function() {
+if(square.style.left === opponent.style.left && square.style.top === opponent.style.top) {
+  game.removeChild(opponent)
+  
+} 
+})
 
 
 
-
-
-/**
- *### Bonus Feature
-* Create a button "Generate Opponent". 
-As a user, I can click on this button in order 
-to spawn a white "opponent" square somewhere 
-randomly inside the black box. If I move my 
-square and it collides with this opponent square, 
-then the opponent will be removed. 
-* You can decide if multiple opponent squares 
-are allowed at the same time, or if only one 
-opponent can exist at once!
- */
