@@ -41,7 +41,7 @@ const sectionOneTitle = document.createElement('h1')
 rootBody.appendChild(sectionOne)
 sectionOne.append(sectionOneTitle)
 
-sectionOneTitle.innerText = "Square Up!!"
+sectionOneTitle.innerText = "Feel The Bern!!"
 sectionOneTitle.addEventListener("click", function(e) {
   if(e.target === sectionOneTitle) {
     sectionOneTitle.style.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
@@ -70,10 +70,6 @@ if(square.style.left === opponent.style.left && square.style.top === opponent.st
 })
 
 function addChild () {
-  
-//   let random2 = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
-// opponent.style = `top: ${random2}px; left: ${random2 + 50}px;`
-//https://media.giphy.com/media/uR6JMOFCtLmXkcKOkG/giphy.gif
 let img = document.createElement("img")
 img.src = "https://media.giphy.com/media/uR6JMOFCtLmXkcKOkG/giphy.gif"
 let random2 = Math.floor((Math.random() * (250 - 0) + 0)/10 )*10
